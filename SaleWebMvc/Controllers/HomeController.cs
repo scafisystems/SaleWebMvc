@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using SaleWebMvc.Models;
+using SaleWebMvc.Models.ViewModels;
 
 namespace SaleWebMvc.Controllers
 {
@@ -24,9 +25,19 @@ namespace SaleWebMvc.Controllers
 
         public IActionResult Contact()
         {
-            ViewData["Message"] = "Your contact page.";
+            ViewData["Message"] = "Our Contact:";
+            ViewData["Own"] = "André";
+            ViewData["Email"] = "scafisystems@gmail.com";
+            ViewData["Site"] = "www.scafisystems.com";
 
             return View();
+        }
+
+        public IActionResult SiteScafisystems()
+        {
+            ViewData["Site"] = "www.scafisystems.com";
+
+            return Redirect("http://www.scafisystems.com");
         }
 
         public IActionResult Privacy()

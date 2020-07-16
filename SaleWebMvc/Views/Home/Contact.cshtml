@@ -1,17 +1,19 @@
 ﻿@{
     ViewData["Title"] = "Contact";
+    string site = "http://" + @ViewData["Site"].ToString();
 }
 <h2>@ViewData["Title"]</h2>
 <h3>@ViewData["Message"]</h3>
 
 <address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
+    Owner: @ViewData["Own"] <br />
+    Scafi Street, 37<br />
+    Trento, IT 38123<br />
     <abbr title="Phone">P:</abbr>
-    425.555.0100
+    +39 0461-5555
 </address>
 
 <address>
-    <strong>Support:</strong> <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
+    <strong>Support:</strong> <a href=@ViewData["Email"]>@ViewData["Email"]</a><br />
+    <strong>Site:</strong> <a href= @site >@ViewData["Site"]</a>
 </address>
